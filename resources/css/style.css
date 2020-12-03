@@ -1,18 +1,89 @@
+@font-face {
+  /* Source: https://uispace.net/1288-aquatico-animated-font-free-Font */
+  font-family: Aquatico;
+  src: url(../fonts/Aquatico-Regular.otf) format("opentype");
+}
+
+@font-face {
+  /* Source: https://uispace.net/1397-liquide-font-free-Font */
+  font-family: Liquide;
+  src: url(../fonts/Liquide.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
 body {
-  background: #eee;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c1065), color-stop(#1faab2), to(#1fb26d));
+  background-image: linear-gradient(180deg, #4c1065, #1faab2, #1fb26d);
+  color: #eee;
+}
+
+.main-container {
+  background-color: #111;
+  width: 85%;
+  margin: auto;
+}
+
+.header {
+  height: 60vh;
   overflow: hidden;
+  background-image: url(../images/jonatan-pie-0y9YRbz2BMk-unsplash.jpg);
+  background-size: 100%;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+}
+
+.header__h1 {
+  font-family: Aquatico, sans-serif;
+  font-size: 8vmin;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.header__h2 {
+  font-family: Liquide, sans-serif;
+  font-size: 5vmin;
+  margin: 4rem 0;
+  line-height: 1.3;
+  float: right;
+  width: 30%;
+}
+
+.main {
+  padding: 3rem;
+}
+
+.main__p {
+  margin-bottom: 2rem;
+}
+
+.main__h2 {
+  margin-bottom: 3rem;
+}
+
+.main__h3 {
+  margin-bottom: 2rem;
 }
 
 .selection {
   display: block;
-  width: 232px;
+  width: 250px;
   height: 500px;
-  position: relative;
-  float: right;
-  padding: 0 30px 0 40px;
-  margin-top: 40px;
-  -webkit-box-shadow: -10px 0 0 #D6D6D6;
-          box-shadow: -10px 0 0 #D6D6D6;
+  /*position: relative;*/
+  /*float: right;*/
+  /*padding: 0 30px 0 40px;*/
+  /*margin-top: 40px;*/
+  /*box-shadow: -10px 0 0 #D6D6D6;*/
   list-style: none;
 }
 
@@ -31,7 +102,7 @@ body {
 }
 
 .selection .li:focus img {
-  opacity: .3;
+  opacity: .7;
 }
 
 .selection .li > img {
@@ -41,9 +112,9 @@ body {
   min-height: 100px;
   max-width: 100px;
   max-height: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
+  /*position: absolute;
+            left: 0;
+            top: 0;*/
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -52,18 +123,19 @@ body {
   width: 500px;
   height: 500px;
   position: absolute;
-  top: 0;
-  right: 400px;
+  right: 30%;
+  float: right;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+  overflow: hidden;
 }
 
 .cube {
   width: 500px;
   height: 500px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  /*position: absolute;
+    top: 0;
+    left: 0;*/
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: rotateX(0deg) translateZ(-250px);
@@ -118,9 +190,9 @@ body {
   min-height: 100%;
   max-width: 100%;
   max-height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+  /*position: absolute;
+        left: 0;
+        top: 0;*/
 }
 
 .li:focus ~ .cube-container .cube {
