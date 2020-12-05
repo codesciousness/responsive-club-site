@@ -24,6 +24,21 @@
   height: 500px;
 }
 
+:root {
+  --purple: #4c1065;
+  /* rgb(76, 16, 101) */
+  --blue: #1faab2;
+  /* rgb(31, 170, 178) */
+  --blue2: #55bfe2;
+  /* rgb(85, 191, 226) */
+  --green: #1fb26d;
+  /* rgb(31, 178, 109) */
+  --whitish: #eee;
+  /* rgb(238, 238, 238) */
+  --blackish: #111;
+  /* rgb(17, 17, 17) */
+}
+
 * {
   margin: 0;
   border: 0;
@@ -36,13 +51,13 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c1065), color-stop(#1faab2), to(#1fb26d));
-  background-image: linear-gradient(180deg, #4c1065, #1faab2, #1fb26d);
-  color: #eee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--purple)), color-stop(var(--blue)), to(var(--green)));
+  background-image: linear-gradient(180deg, var(--purple), var(--blue), var(--green));
+  color: var(--whitish);
 }
 
 .main-container {
-  background-color: #111;
+  background-color: var(--blackish);
   width: 85%;
   margin: auto;
 }
@@ -74,7 +89,7 @@ body {
 }
 
 .form {
-  background-color: #111;
+  background-color: var(--blackish);
   opacity: 0.6;
   margin-top: 1rem;
   padding: 0.8rem;
@@ -107,18 +122,18 @@ body {
   padding: 0.8rem;
   cursor: pointer;
   outline: none;
-  color: #eee;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c1065), to(#1faab2));
-  background-image: linear-gradient(180deg, #4c1065, #1faab2);
+  color: var(--whitish);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--purple)), to(var(--blue)));
+  background-image: linear-gradient(180deg, var(--purple), var(--blue));
   border: 3px solid slateblue;
   border-radius: 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .form__submit:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1faab2), to(#1fb26d));
-  background-image: linear-gradient(180deg, #1faab2, #1fb26d);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--blue)), to(var(--green)));
+  background-image: linear-gradient(180deg, var(--blue), var(--green));
 }
 
 .main {
@@ -135,7 +150,7 @@ a {
 }
 
 a:hover {
-  color: #1fb26d;
+  color: var(--green);
 }
 
 .selection {
@@ -153,8 +168,8 @@ a:hover {
   z-index: 10;
   float: left;
   margin: 0 10px 10px 0;
-  border: solid 3px #55BFE2;
-  background-color: #55BFE2;
+  border: solid 3px var(--blue2);
+  background-color: var(--blue2);
   outline: none;
   cursor: pointer;
 }
@@ -390,9 +405,14 @@ a:hover {
     width: 300px;
     height: 300px;
     cursor: auto;
+    overflow: hidden;
   }
   .selection .li:focus img {
     opacity: 1;
+  }
+  .selection .li:hover img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   .cube-container {
     display: none;
